@@ -14,7 +14,7 @@ function Revisar($palabra, $max)
     $palabrasValidas = ["Recuperatorio", "Parcial",  "Programacion"];
     if(strlen($palabra) <= $max)
     {
-        foreach ($$palabrasValidas as $key => $value) {
+        foreach ($palabrasValidas as $value) {
             if ($palabra == $value)
             {
                 return 1;
@@ -24,8 +24,8 @@ function Revisar($palabra, $max)
     return 0;
 }
 
-echo Revisar("Programacion", 20);
-echo Revisar("Prueba fallida", 5);
-echo Revisar("Otra prueba fallida",100)
+echo Revisar("Programacion", 20). "<br>";
+echo Revisar("Prueba fallida", 5). "<br>";
+echo Revisar("Otra prueba fallida",100). "<br>";
 
 ?>
