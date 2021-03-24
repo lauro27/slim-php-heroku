@@ -1,8 +1,8 @@
 <?php
-$ejerciciosResueltos = 12;
+$ejerciciosResueltos = 13;
 
 for ($i=11; $i <= $ejerciciosResueltos; $i++) { 
-    print('<a href:"/ejercicio'. $i .'/index.php">Ejercicio '.$i."</a>");
+    print('<a href="ejercicio'. $i .'\\index.php">Ejercicio '.$i.'</a><br>');
 }
 
 ?>
