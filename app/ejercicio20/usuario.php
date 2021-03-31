@@ -28,12 +28,12 @@ class Usuario
     {
         $carga = null;
         $retorno = false;
-        if (ValidarUsuario($this)) {
-            $carga .= $this->nombre . "\;";
-            $carga .= $this->clave . "\;";
-            $carga .= $this->clave . "\n";
+        if ($this->ValidarUsuario()) {
+            $carga .= $this->nombre . ";";
+            $carga .= $this->clave . ";";
+            $carga .= $this->mail . "\n";
             $miarchivo = fopen("usuarios.csv", "a");
-            if (fwrite($miarchivo, "$carga\n")) {
+            if (fwrite($miarchivo, $carga)) {
                 $retorno = true;
             }
             fclose($miarchivo);
