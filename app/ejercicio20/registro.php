@@ -1,6 +1,8 @@
 <?php
 include "usuario.php";
 /*
+ACORDATE DEL ISSET
+
 Lamas Juan Pablo
 Aplicación No 20 (Registro CSV)
 Archivo: registro.php

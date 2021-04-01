@@ -29,8 +29,8 @@ class Usuario
         $carga = null;
         $retorno = false;
         if ($this->ValidarUsuario()) {
-            $carga .= $this->nombre . ";";
-            $carga .= $this->clave . ";";
+            $carga .= $this->nombre . ",";
+            $carga .= $this->clave . ",";
             $carga .= $this->mail . "\n";
             $miarchivo = fopen("usuarios.csv", "a");
             if (fwrite($miarchivo, $carga)) {
@@ -39,5 +39,22 @@ class Usuario
             fclose($miarchivo);
         }
         return $retorno;
+    }
+
+    public static function CsvToArrayUsuario($filename)
+    {
+        $retorno = [];
+        $miarchivo = fopen($filename, 'r');
+        while(!feof($miarchivo))
+        {
+            $datos = fgetcsv($miarchivo);
+            $retorno[count($retorno)] = new Usuario($datos[0], $datos[1], $datos[2]);
+        }
+        return $retorno;
+    }
+
+    public function __toString()
+    {
+        return $this->nombre . " - " . $this->clave . " - " . $this->mail;
     }
 }
