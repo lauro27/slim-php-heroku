@@ -58,3 +58,4 @@ class Usuario
         return $this->nombre . " - " . $this->clave . " - " . $this->mail;
     }
 }
+?>
